@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="views"></ion-back-button>
+    </ion-buttons>
+    <ion-title>WordPress</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="siteLogo" alt="Logo de la Página" />
+  </ion-card>
+
+  <ion-list>
+    <ion-item *ngFor="let item of news">
+      <ion-label>
+        <h2>{{ item.title.rendered }}</h2>
+        <p [innerHTML]="item.excerpt.rendered"></p>
+        <ion-button href="{{ item.link }}" target="_blank" expand="block">
+          Leer más
+        </ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

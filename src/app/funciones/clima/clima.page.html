@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="views"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Clima de Hoy</ion-title>
+  </ion-toolbar>
+</ion-header>
+//202010703
+<ion-content *ngIf="weatherData">
+  <div class="clima-container">
+    <h2>{{ weatherData.name }}</h2>
+    <p>Temperatura: {{ weatherData.main.temp }}°C</p>
+    <p>Condición: {{ weatherData.weather[0].description }}</p>
+    <p>Humedad: {{ weatherData.main.humidity }}%</p>
+    <p>Viento: {{ weatherData.wind.speed }} km/h</p>
+  </div>
+</ion-content>
+
